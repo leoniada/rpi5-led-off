@@ -1,6 +1,8 @@
 # rpi5-led-off
 
-Turn off the status LEDs on a Raspberry Pi 5 — both the green ACT and red PWR — with a systemd service that runs automatically 3 minutes after boot.
+Turn off the status LEDs on a Raspberry Pi 5 — both the green ACT and red PWR — with a systemd service that runs automatically after boot.
+
+> **Note:** LEDs turn off 90 seconds after boot. This delay is intentional — the RP1 firmware and kernel LED subsystem need time to fully initialise. If you reboot and the LEDs are still on, just wait.
 
 ## Why is this needed?
 

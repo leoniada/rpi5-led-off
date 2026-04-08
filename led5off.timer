@@ -1,8 +1,8 @@
 [Unit]
-Description=Turn off status LEDs 3 minutes after boot
+Description=Turn off status LEDs 90 seconds after boot
 
 [Timer]
-OnBootSec=3min
+OnBootSec=90sec
 Unit=led5off.service
 
 [Install]
