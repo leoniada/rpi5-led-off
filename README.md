@@ -1,8 +1,8 @@
 # rpi5-led-off
 
-Turn off the status LEDs on a Raspberry Pi 5 — both the green ACT and red PWR — with a systemd service that runs automatically after boot.
+Turn off the status LEDs on a Raspberry Pi 5 - both the green ACT and red PWR, with a systemd service that runs automatically after boot.
 
-> **Note:** LEDs turn off 90 seconds after boot. This delay is intentional — the RP1 firmware and kernel LED subsystem need time to fully initialise. If you reboot and the LEDs are still on, just wait.
+> **Note:** LEDs turn off 90 seconds after boot. This delay is intentional - the RP1 firmware and kernel LED subsystem need time to fully initialise. If you reboot and the LEDs are still on, just wait.
 
 ## Why is this needed?
 
@@ -30,7 +30,7 @@ Discovered via `sudo pinctrl | grep LED` and `/sys/kernel/debug/gpio`:
 | GPIO44 | RP1 | `RP1_STAT_LED` | Red (PWR) | `dh` = OFF, `dl` = ON |
 | GPIO209 | BCM2712 AON | `2712_STAT_LED` | Green (ACT) | `dl` = OFF, `dh` = ON |
 
-> Note: the kernel's leds subsystem labels them with swapped names (`ACT`/`PWR`), which is the opposite of the physical LED colors. Don't trust the names — trust the GPIO numbers.
+> Note: the kernel's leds subsystem labels them with swapped names (`ACT`/`PWR`), which is the opposite of the physical LED colors. Don't trust the names - trust the GPIO numbers.
 
 The solution is to **bypass the leds-gpio driver entirely** and control both GPIOs directly with `pinctrl`, after disabling the kernel triggers that would otherwise fight back.
 
