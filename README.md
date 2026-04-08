@@ -45,7 +45,7 @@ The solution is to **bypass the leds-gpio driver entirely** and control both GPI
 ## Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/rpi5-led-off
+git clone https://github.com/leoniada/rpi5-led-off
 cd rpi5-led-off
 sudo bash install.sh
 ```
