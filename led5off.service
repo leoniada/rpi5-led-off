@@ -1,0 +1,11 @@
+[Unit]
+Description=Turn off status LEDs on Raspberry Pi 5
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/led5off.sh -off
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

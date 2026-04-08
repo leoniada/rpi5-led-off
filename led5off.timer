@@ -1,0 +1,9 @@
+[Unit]
+Description=Turn off status LEDs 3 minutes after boot
+
+[Timer]
+OnBootSec=3min
+Unit=led5off.service
+
+[Install]
+WantedBy=timers.target
